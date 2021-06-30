@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Login 01</title>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.4.0/chart.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <section class="ftco-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-7 col-lg-5">
+            <div class="login-wrap p-4 p-md-5">
+              <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Monitoramento de Peso</a>
+                <button
+                  class="navbar-toggler"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#navbarNav"
+                  aria-controls="navbarNav"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                >
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#"
+                        >Monitoramento de Peso
+                        <span class="sr-only">(current)</span></a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="./atividades.html">Historico de Atividades</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="registro_fotografico.html">Registro Fotográfico</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Sair</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <div style="padding-top:25px;">
+              <center>
+                <div><span>+5KG</span></div>
+                <div><span>Ultimos 10 dias</span></div>
+              </center>
+            </div>
+
+              <canvas style="padding-bottom:25px;" id="myChart" width="400" height="400"></canvas>
+              
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Peso</th>
+                    <th scope="col">Data</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>55 KG</td>
+                    <td>20/10/2020</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>50 KG</td>
+                    <td>10/10/2020</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>45 KG</td>
+                    <td>30/09/2020</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script>
+      var ctx = document.getElementById("myChart");
+      var myChart = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["30/09/2020", "10/10/2020", "20/10/2020"],
+          datasets: [
+            {
+              label: "Peso x Dia",
+              data: [45, 50, 55],
+              backgroundColor: [
+                "rgba(192, 192, 192)",
+                "rgba(192, 192, 192)",
+                "rgba(192, 192, 192)",
+              ],
+              borderColor: [
+                "rgba(192, 192, 192)",
+                "rgba(192, 192, 192)",
+                "rgba(192, 192, 192)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              stacked: true,
+              beginAtZero: true,
+            },
+          },
+        },
+      });
+    </script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
